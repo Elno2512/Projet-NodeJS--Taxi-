@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Ajouter Nouveau</title>
+</head>
+
+<body>
+
+    <div>
+        <img src="../img/malagasycar-premiereclasse_08-1200x800.jpg" style="width: 100%; height: 785px; " alt="">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent" style="margin-top: -780px;">
+            <a class="navbar-brand" href="#"><img src="../img/CUF.png" style="width: 500px; margin-top: -10px;" alt="" srcset=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+            <div class="collapse navbar-collapse" style="margin-top: -30px;" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto" style="margin-left: 200px;">
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="../index.html">Acceuil <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Domaine
+        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Impôt</a>
+                            <a class="dropdown-item" href="../Documentation/transport.html">Transport</a>
+                            <div class="dropdown-divider">Elevage</div>
+                            <a class="dropdown-item" href="#">Autre domaine</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">A propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Juin 2022</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+
+            <div class="card-body ">
+               
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body" style="background-color: khaki;">
+                                <form method="POST" action="/add" class="container">
+                        <div id="cin" class="justify-content-center">
+                            <h1>Carte d'Identité Nationale</h1>
+                        </div><br>
+
+                        <div class="row g-2">
+                                <div class="col-md-5 ">
+                                        <input  name="id" id="id" type="hidden" >
+                                    </div>
+                            <div class="col-md-5 ">
+                                <label>Taille</label>
+                                <input style="text-align: center;" required name="taille" id="taille" type="text " class="form-control" placeholder="Taille">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class=" col-md-5 ">
+                                <label>Nom</label>
+                                <input style="text-align: center;" required name="nom" id="nom" type="text" class="form-control" placeholder="Nom">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Prénom</label>
+                                <input style="text-align: center;" required name="prenom" id="prenom" type="text " class="form-control" placeholder="Prénom">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class="col-md-5 ">
+                                <label>Téléphone</label>
+                                <input style="text-align: center;" required name="telephone" id="telephone" type="text " class="form-control" placeholder="telephone">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>E-Mail</label>
+                                <input style="text-align: center;" required name="email" id="email" type="text " class="form-control" placeholder="email">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class="col-md-5 ">
+                                <label>Date de Naissance</label>
+                                <input style="text-align: center;" required name="datenaiss" id="datenaiss" type="date" class="form-control" placeholder="Date de Naissance ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Lieu de Naissance</label>
+                                <input style="text-align: center;" required name="lieunaiss" id="lieunaiss" type="text " class="form-control" placeholder="Lieu de Naissance ">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class="col-md-5 ">
+                                <label>Numéro CIN</label>
+                                <input style="text-align: center;" required name="numcin" id="numcin" type="text" class="form-control" placeholder="N° CIN ">
+                            </div><br>
+                            <div class="col-md-5 " ;>
+                                <label>Date CIN</label>
+                                <input style="text-align: center;" required name="datecin" id="datecin" type="date" class="form-control">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class="form-group col-md-5">
+                                <label>Adresse</label>
+                                <input style="text-align: center;" required name="domicile" id="domicile" class="form-control" id="exampleFormControlTextarea1" placeholder="Domicile ">
+                            </div>
+                            <div class="col-md-5 ">
+                                <label>Arrondissement</label>
+                                <input style="text-align: center;" required name="arrondissement" id="arrondissement" type="text " class="form-control" placeholder="Arrondissement ">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class="col-md-5 ">
+                                <label>Profession</label>
+                                <input style="text-align: center;" required name="profession" id="profession" type="text " class="form-control" placeholder="Profession ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Nom du Père</label>
+                                <input style="text-align: center;" required name="pere" id="pere" type="text " class="form-control" placeholder="Père ">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class="col-md-5 ">
+                                <label>Nom de la Mère</label>
+                                <input style="text-align: center;" required name="mere" id="mere" type="text " class="form-control" placeholder="Mère ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Lieu CIN</label>
+                                <input style="text-align: center;" required name="lieucin" id="lieucin" type="text " class="form-control" placeholder="Fait à... ">
+                            </div><br>
+                        </div><br><br>
+
+                        <div id="permis" class="justify-content-center">
+                            <h1>Permis de conduire</h1>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class="col-md-5 ">
+                                <label>Numéro Permis</label>
+                                <input style="text-align: center;" required name="numpermis" id="numpermis" type="text" class="form-control " placeholder="N° Permis ">
+                            </div><br>
+                            <div class="form-group col-md-5">
+                                <label>Catégorie Permis</label>
+                                <input style="text-align: center;" required name="catpermis" id="catpermis" class="form-control" placeholder="Catégories ">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class="col-md-5 ">
+                                <label>Lieu Permis</label>
+                                <input style="text-align: center;" required name="lieupermis" id="lieupermis" type="text " class="form-control " placeholder="Fait à ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Date Permis</label>
+                                <input style="text-align: center;" required name="datepermis" id="datepermis" type="date" class="form-control " placeholder="">
+                            </div><br>
+                        </div><br><br>
+
+                        <div id="carte" class="justify-content-center">
+                            <h1>Carte Grise</h1>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class=" col-md-5">
+                                <label>Numéro d'Immatriculation</label>
+                                <input style="text-align: center;" required name="numImm" id="numimm" type="text " class="form-control " placeholder="Numero d'Immatriculation">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Marque Voiture</label>
+                                <input style="text-align: center;" required name="marqueVoit" id="marquevoit" type="text " class="form-control " placeholder="Marque Voiture">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class="col-md-5 ">
+                                <label>Date d'Emmission</label>
+                                <input style="text-align: center;" required name="dateEmm" id="dateemm" type="date" class="form-control " placeholder="Date d'Emmission ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Date de Premier Circulation</label>
+                                <input style="text-align: center;" required name="dateCircul" id="datecircul" type="date" class="form-control " placeholder="Date de premier circulation ">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class="col-md-5 ">
+                                <label>Fonction Voiture</label>
+                                <input style="text-align: center;" required name="typeVoit" id="typevoit" type="text " class="form-control " placeholder="Type Voiture">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Nombre de place Assise</label>
+                                <input style="text-align: center;" required name="placeVoit" id="placevoit" type="text " class="form-control " placeholder="Place assise du voiture">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class="col-md-5 ">
+                                <label>Couleur de la Voiture</label>
+                                <input style="text-align: center;" required name="couleurVoit" id="couleurvoit" type="text " class="form-control " placeholder="Couleur du voiture">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Numéro Moteur de la Voiture</label>
+                                <input style="text-align: center;" required name="numMoteurVoit" id="nummoteurvoit" type="text" class="form-control " placeholder="N° moteur voiture ">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class="col-md-5 ">
+                                <label>Source d'Energie de la Voiture</label>
+                                <input style="text-align: center;" required name="energieVoit" id="energievoit" type="text " class="form-control " placeholder="Source d'energie voiture">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Puissance de la Voiture</label>
+                                <input style="text-align: center;" required name="puissanceVoit" id="puissancevoit" type="text" class="form-control " placeholder="Puissance du voiture">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class="col-md-5 ">
+                                <label>Poids totale</label>
+                                <input style="text-align: center;" required name="poidVoit" id="poidvoit" type="text " class="form-control " placeholder="Poids totale du voiture">
+                            </div><br>
+                        </div><br><br>
+
+                        <div id="assurance" class="justify-content-center">
+                            <h1>Attestation d'Assurance</h1>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class=" col-md-5 ">
+                                <label>Nom de l'Assurance</label>
+                                <input style="text-align: center;" required name="nomAss" id="nomass" type="text " class="form-control " placeholder="Nom de l'Assurance ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Numero de Police</label>
+                                <input style="text-align: center;" required name="numAss" id="numass" type="text " class="form-control " placeholder="N° de la Police ">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class="col-md-5 ">
+                                <label>Valable du</label>
+                                <input style="text-align: center;" required name="valabledu" id="valabledu" type="date" class="form-control ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Au</label>
+                                <input style="text-align: center;" required name="au" id="au" type="date" class="form-control ">
+                            </div><br>
+                        </div><br>
+
+                        <div id="assurance" class="justify-content-center">
+                            <h1>LICENSE</h1>
+                        </div><br>
+
+                        <div class="row g-2">
+                            <div class="col-md-5 ">
+                                <label>Date de Livraison</label>
+                                <input style="text-align: center;" required name="dateli" id="dateli" type="date" class="form-control ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Numero de License</label>
+                                <input style="text-align: center;" required name="numli" id="numli" type="text " class="form-control " placeholder="N° de la License ">
+                            </div><br>
+                        </div><br>
+                        <div class="button , icon-floppy-o">
+                                        <button type="submit" class="btn btn-success "> Enregistrer</button>
+                                    </div>
+                        </div><br>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="js/jquery-3.6.0.min.js "></script>
+        <script src="js/bootstrap.bundle.js "></script>
+        <script src="js/bootstrap.bundle.min.js "></script>
+        <script src="js/bootstrap.min.js "></script>
+</body>
+
+</html>

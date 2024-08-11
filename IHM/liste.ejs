@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <title>Acceuil</title>
+</head>
+
+<body>
+
+    <!-- Navbar  -->
+
+    <%- include('./navbar')  %>
+
+    <!-- Navbar  -->
+
+    <div class="col-md-12  " style="margin-top: 100px;">
+        <div class="ms-5 w-100 d-flex">
+            <div style="width: 80%">
+                <div class="ms-5">
+                    <div class="ms-5">
+                        <hr class="w-100">
+                        <div class="d-flex">
+                            <h1 style="color: burlywood; margin-left: 25px;" class="icon-tasks"> Liste</h1>
+                            <div class="card text-dark bg-light" style="margin: 0 0 0 750px; width: 200px;">
+                                <div class="card-body">
+                                    <span class="text d-flex justify-content-center w-100">
+                                        <h3 class="icon-taxi"> Total : </h3>
+                                        <p> </p>
+                                        <h3 style="margin-left: 5px;"><%= result[0].nbr %></h3>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="w-100">
+                    </div>
+                </div>
+            </div>
+            <div>
+
+
+            </div>
+        </div>
+
+
+        <table class="table table-sm text-center">
+            <thead>
+                <th>N° Immatriculation</th>
+                <th>Proprietaire</th>
+                <th>Téléphone</th>
+                <th>Email</th>
+                <th>Fonction</th>
+                <th>Marque</th>
+                <th>Couleur</th>
+                <th style="text-align: center;">Controle</th>
+            </thead>
+            <tbody id="tableaux">
+
+            </tbody>
+
+            <% for(i=0; i<resultat.length; i++) { %>
+
+            <tr >
+                <td><%= resultat[i].numimm %></td>
+                <td><%= resultat[i].nom %> <%= resultat[i].prenom %></td>
+                <td><%= resultat[i].telephone %></td>
+                <td><%= resultat[i].email %></td>
+                <td><%= resultat[i].typevoit %></td>
+                <td><%= resultat[i].marquevoit %></td>
+                <td><%= resultat[i].couleurvoit %></td>
+                <td><a type="button" class="btn btn-primary icon-eye" href="/recherche?id=<%= resultat[i].id %>"></a></a>
+                    <a type="button" class="btn btn-danger icon-trash-o" 
+                        onclick="Supprimer('<%= resultat[i].id %>')"></a>
+                    <a type="button" class="btn btn-warning icon-edit" 
+                        onclick="formupdate('<%= resultat[i].id %>','<%= resultat[i].taille %>','<%= resultat[i].nom %>','<%= resultat[i].prenom %>','<%= resultat[i].telephone %>','<%= resultat[i].email %>','<%= resultat[i].datenaiss %>','<%= resultat[i].lieunaiss %>','<%= resultat[i].numcin %>','<%= resultat[i].datecin %>','<%= resultat[i].domicile %>','<%= resultat[i].arrondissement %>','<%= resultat[i].profession %>','<%= resultat[i].pere %>','<%= resultat[i].mere %>','<%= resultat[i].lieucin %>','<%= resultat[i].numpermis %>','<%= resultat[i].catpermis %>','<%= resultat[i].lieupermis %>','<%= resultat[i].datepermis %>','<%= resultat[i].numimm %>','<%= resultat[i].marquevoit %>','<%= resultat[i].dateemm %>','<%= resultat[i].datecircul %>','<%= resultat[i].typevoit %>','<%= resultat[i].placevoit %>','<%= resultat[i].couleurvoit %>','<%= resultat[i].nummoteurvoit %>','<%= resultat[i].energievoit %>','<%= resultat[i].puissancevoit %>','<%= resultat[i].poidvoit %>','<%= resultat[i].nomass %>','<%= resultat[i].numass %>','<%= resultat[i].valabledu %>','<%= resultat[i].au %>','<%= resultat[i].dateli %>','<%= resultat[i].numli %>')"></a>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+    </div>
+
+    </div>
+
+    <!-- Accordion -->
+    <form method="POST" action="/add" class="container mt-5 mb-5">
+        <hr>
+        <h1 class="text-center icon-" style="color: burlywood">Formulaire</h1>
+        <hr>
+
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <div id="cin" class="w-100 text-center">
+                            <h1>Carte d'Identité Nationale</h1>
+                        </div>
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row g-2">
+                            <div class="col-md-5 ">
+                                <input name="id" id="id" type="hidden">
+                            </div>
+                            <div class="col-md-5 w-100 d-flex justify-content-center">
+                                <input class="form-control col-md-5" style="text-align: center;" class="form-control" list="datalistOptions" name="taille" id="taille"
+                                    placeholder="Taille">
+                                <datalist id="datalistOptions">
+                                    <option value="1 m 5">
+                                    <option value="1 m 6">
+                                    <option value="1 m 7">
+                                    <option value="1 m 8">
+                                    <option value="1 m 9">
+                                </datalist>
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class=" col-md-5 ">
+                                <label>Nom</label>
+                                <input style="text-align: center;" name="nom" id="nom" type="text" class="form-control"
+                                    placeholder="Nom">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Prénom</label>
+                                <input style="text-align: center;" name="prenom" id="prenom" type="text "
+                                    class="form-control" placeholder="Prénom">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class="col-md-5 ">
+                                <label>Téléphone</label>
+                                <input style="text-align: center;" name="telephone" id="telephone" type="text "
+                                    class="form-control" placeholder="telephone">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>E-Mail</label>
+                                <input style="text-align: center;" name="email" id="email" type="text "
+                                    class="form-control" placeholder="email">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class="col-md-5 ">
+                                <label>Date de Naissance</label>
+                                <input style="text-align: center;" name="datenaiss" id="datenaiss" type="date"
+                                    class="form-control" placeholder="Date de Naissance ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Lieu de Naissance</label>
+                                <input style="text-align: center;" name="lieunaiss" id="lieunaiss" type="text "
+                                    class="form-control" placeholder="Lieu de Naissance ">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class="col-md-5 ">
+                                <label>Numéro CIN</label>
+                                <input style="text-align: center;" name="numcin" id="numcin" type="text"
+                                    class="form-control" placeholder="N° CIN ">
+                            </div><br>
+                            <div class="col-md-5 " ;>
+                                <label>Date CIN</label>
+                                <input style="text-align: center;" name="datecin" id="datecin" type="date"
+                                    class="form-control">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class="form-group col-md-5">
+                                <label>Adresse</label>
+                                <input style="text-align: center;" name="domicile" id="domicile" class="form-control"
+                                    id="exampleFormControlTextarea1" placeholder="Domicile ">
+                            </div>
+                            <div class="col-md-5 ">
+                                <label>Arrondissement</label>
+                                <input style="text-align: center;" name="arrondissement" id="arrondissement"
+                                    type="text " class="form-control" placeholder="Arrondissement ">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class="col-md-5 ">
+                                <label>Profession</label>
+                                <input style="text-align: center;" name="profession" id="profession" type="text "
+                                    class="form-control" placeholder="Profession ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Nom du Père</label>
+                                <input style="text-align: center;" name="pere" id="pere" type="text "
+                                    class="form-control" placeholder="Père ">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class="col-md-5 ">
+                                <label>Nom de la Mère</label>
+                                <input style="text-align: center;" name="mere" id="mere" type="text "
+                                    class="form-control" placeholder="Mère ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Lieu CIN</label>
+                                <input style="text-align: center;" name="lieucin" id="lieucin" type="text "
+                                    class="form-control" placeholder="Fait à... ">
+                            </div><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        <div id="permis" class="w-100 text-center">
+                            <h1>Permis de conduire</h1>
+                        </div>
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class="col-md-5 ">
+                                <label>Numéro Permis</label>
+                                <input style="text-align: center;" name="numpermis" id="numpermis" type="text"
+                                    class="form-control " placeholder="N° Permis ">
+                            </div><br>
+                            <div class="form-group col-md-5">
+                                <label>Catégorie Permis</label>
+                                <input style="text-align: center;" name="catpermis" id="catpermis" class="form-control"
+                                    placeholder="Catégories ">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class="col-md-5 ">
+                                <label>Lieu Permis</label>
+                                <input style="text-align: center;" name="lieupermis" id="lieupermis" type="text "
+                                    class="form-control " placeholder="Fait à ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Date Permis</label>
+                                <input style="text-align: center;" name="datepermis" id="datepermis" type="date"
+                                    class="form-control " placeholder="">
+                            </div><br>
+                        </div><br><br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <div id="carte" class="w-100 text-center">
+                            <h1>Carte Grise</h1>
+                        </div>
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class=" col-md-5">
+                                <label>Numéro d'Immatriculation</label>
+                                <input style="text-align: center;" name="numImm" id="numimm" type="text "
+                                    class="form-control " placeholder="Numero d'Immatriculation">
+                            </div><br>
+
+                            <div class="col-md-5 ">
+                                <label for="marquevoit">Marque Voiture</label>
+                                <input class="form-control" list="marquevoit" name="marqueVoit"
+                                    placeholder="Marque">
+                                <datalist id="marquevoit">
+                                    <option value="Mazda">
+                                    <option value="Toyota">
+                                    <option value="Hyundai">
+                                    <option value="Volkswagen">
+                                    <option value="Atos">
+                                    <option value="Matiz">
+                                    <option value="Mercedes">
+                                    <option value="Renault">
+                                </datalist>
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class="col-md-5 ">
+                                <label>Date d'Emmission</label>
+                                <input style="text-align: center;" name="dateEmm" id="dateemm" type="date"
+                                    class="form-control " placeholder="Date d'Emmission ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Date de Premier Circulation</label>
+                                <input style="text-align: center;" name="dateCircul" id="datecircul" type="date"
+                                    class="form-control " placeholder="Date de premier circulation ">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class="col-md-5 ">
+                                <label>Fonction Voiture</label>
+                                <input style="text-align: center;" name="typeVoit" id="typevoit" type="text "
+                                    class="form-control " value="Taxi" readonly >
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Nombre de place Assise</label>
+                                <input style="text-align: center;" name="placeVoit" id="placevoit" type="text "
+                                    class="form-control " value="5" readonly>
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class="col-md-5 ">
+                                <label>Couleur de la Voiture</label>
+                                <input style="text-align: center;" name="couleurVoit" id="couleurvoit" type="text "
+                                    class="form-control " placeholder="Couleur du voiture">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Numéro Moteur de la Voiture</label>
+                                <input style="text-align: center;" name="numMoteurVoit" id="nummoteurvoit" type="text"
+                                    class="form-control " placeholder="N° moteur voiture ">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class="col-md-5 ">
+                                <label>Energie Voiture</label>
+                                <select style="text-align: center;" name="energieVoit" id="energievoit"
+                                    class="form-select" aria-label="Default select example">
+                                    <option selected>Source d'energie voiture</option>
+                                    <option value="1">Essence</option>
+                                    <option value="2">Diesel</option>
+                                    <option value="3">Electrique</option>
+                                </select>
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Puissance de la Voiture</label>
+                                <input style="text-align: center;" name="puissanceVoit" id="puissancevoit" type="text"
+                                    class="form-control " placeholder="Puissance du voiture">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class="col-md-5 ">
+                                <label>Poids totale</label>
+                                <input style="text-align: center;" name="poidVoit" id="poidvoit" type="text "
+                                    class="form-control " placeholder="Poids totale du voiture">
+                            </div><br>
+                        </div><br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <div id="assurance" class="w-100 text-center">
+                            <h1>Attestation d'Assurance</h1>
+                        </div>
+                    </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class=" col-md-5 ">
+                                <label>Nom de l'Assurance</label>
+                                <input style="text-align: center;" name="nomAss" id="nomass" type="text "
+                                    class="form-control " placeholder="Nom de l'Assurance ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Numero de Police</label>
+                                <input style="text-align: center;" name="numAss" id="numass" type="text "
+                                    class="form-control " placeholder="N° de la Police ">
+                            </div><br>
+                        </div><br>
+
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class="col-md-5 ">
+                                <label>Valable du</label>
+                                <input style="text-align: center;" name="valabledu" id="valabledu" type="date"
+                                    class="form-control ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Au</label>
+                                <input style="text-align: center;" name="au" id="au" type="date" class="form-control ">
+                            </div><br>
+                        </div><br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        <div id="assurance" class="w-100 text-center">
+                            <h1>LICENSE</h1>
+                        </div>
+                    </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row g-2 w-100 d-flex justify-content-center">
+                            <div class="col-md-5 ">
+                                <label>Date de Livraison</label>
+                                <input style="text-align: center;" name="dateli" id="dateli" type="date"
+                                    class="form-control ">
+                            </div><br>
+                            <div class="col-md-5 ">
+                                <label>Numero de License</label>
+                                <input style="text-align: center;" name="numli" id="numli" type="text "
+                                    class="form-control " placeholder="N° de la License ">
+                            </div><br>
+                        </div><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-outline-success w-100 d-flex justify-content-center icon-save"> <span class="ms-2">ENREGISTRER</span> </button>
+    </form>
+    <!-- Accordion -->
+
+
+    <script src="js/jquery-3.6.0.min.js "></script>
+    <script src="js/bootstrap.bundle.js "></script>
+    <script src="js/bootstrap.bundle.min.js "></script>
+    <script src="js/bootstrap.min.js "></script>
+</body>
+
+<script>
+    function formupdate(id, taille, nom, prenom, telephone, email, datenaiss, lieunaiss, numcin, datecin, domicile, arrondissement, profession, pere, mere, lieucin, numpermis, catpermis, lieupermis, datepermis, numImm, marqueVoit, dateEmm, dateCircul, typeVoit, placeVoit, couleurVoit, numMoteurVoit, energieVoit, puissanceVoit, poidVoit, nomAss, numAss, valabledu, au, dateli, numli) {
+        document.getElementById('id').value = id;
+        document.getElementById('taille').value = taille;
+        document.getElementById('nom').value = nom;
+        document.getElementById('prenom').value = prenom;
+        document.getElementById('telephone').value = telephone;
+        document.getElementById('email').value = email;
+        document.getElementById('datenaiss').value = datenaiss;
+        document.getElementById('lieunaiss').value = lieunaiss;
+        document.getElementById('numcin').value = numcin;
+        document.getElementById('datecin').value = datecin;
+        document.getElementById('domicile').value = domicile;
+        document.getElementById('arrondissement').value = arrondissement;
+        document.getElementById('profession').value = profession;
+        document.getElementById('pere').value = pere;
+        document.getElementById('mere').value = mere;
+        document.getElementById('lieucin').value = lieucin;
+        document.getElementById('numpermis').value = numpermis;
+        document.getElementById('catpermis').value = catpermis;
+        document.getElementById('lieupermis').value = lieupermis;
+        document.getElementById('datepermis').value = datepermis;
+        document.getElementById('numimm').value = numImm;
+        document.getElementById('marquevoit').value = marqueVoit;
+        document.getElementById('dateemm').value = dateEmm;
+        document.getElementById('datecircul').value = dateCircul;
+        document.getElementById('typevoit').value = typeVoit;
+        document.getElementById('placevoit').value = placeVoit;
+        document.getElementById('couleurvoit').value = couleurVoit;
+        document.getElementById('nummoteurvoit').value = numMoteurVoit;
+        document.getElementById('energievoit').value = energieVoit;
+        document.getElementById('puissancevoit').value = puissanceVoit;
+        document.getElementById('poidvoit').value = poidVoit;
+        document.getElementById('nomass').value = nomAss;
+        document.getElementById('numass').value = numAss;
+        document.getElementById('valabledu').value = valabledu;
+        document.getElementById('au').value = au;
+        document.getElementById('dateli').value = dateli;
+        document.getElementById('numli').value = numli;
+
+    }
+
+    function Supprimer(id) {
+
+        let pointfinal = "/add/" + id;
+        fetch(pointfinal, { method: "DELETE" }
+        ).then((reponse) => reponse.json()
+        ).then((donnee) => window.location.href = donnee.routeRacine
+        ).catch((erreur) => console.log(erreur)
+        )
+    }
+
+</script>
+<!-- <script src="js/apexcharts.min.js"></script>
+<script src="js/script.js"></script> -->
+
+</html>

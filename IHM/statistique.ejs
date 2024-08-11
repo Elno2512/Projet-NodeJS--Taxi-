@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <title>Statistique</title>
+</head>
+
+<body>
+    <!-- Navbar  -->
+
+    <%- include('./navbar')  %>
+
+    <!-- Navbar  -->
+
+    <div class="d-flex" >
+        <div class="card text-black bg-light mb-3" style="max-width: 18rem; margin: 100px 0 0 100px;">
+            <div class="card-body">
+                <h5 class="card-title">Nombre Totale Taxi : <span
+                        style="margin-left: 15px; font-size: 30px;"><%= result[0].tot %></span> </h5>
+            </div>
+        </div>
+        <div class="card text-black bg-light mb-3" style=" margin: 100px 0 0 25px;">
+            <div class="card-body">
+                <h5 class="card-title">Nombre de client aujourd'hui : <span
+                        style="margin-left: 15px; font-size: 30px;"><%= result[0].today %></span> </h5>
+            </div>
+        </div>
+        <div class="card text-black bg-light mb-3" style=" margin: 100px 0 0 25px;">
+            <div class="card-body">
+                <h5 class="card-title">Nombre de client aujourd'hui : <span
+                        style="margin-left: 15px; font-size: 30px;"><%= result[0].today %></span> </h5>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js "></script>
+    <script src="js/bootstrap.bundle.js "></script>
+    <script src="js/bootstrap.bundle.min.js "></script>
+    <script src="js/bootstrap.min.js "></script>
+</body>
+
+</html>

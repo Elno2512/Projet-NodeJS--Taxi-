@@ -1,0 +1,142 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.btn1 button:hover {
+    transition: 1s;
+    transform: scale(1.3);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.commentaire {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.routiere {
+    margin: 0px;
+    font-size: 90px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.domaine {
+    margin: 160px;
+    margin-left: 20px;
+    font-size: 90px;
+}
+
+.transport {
+    color: white;
+    animation-name: color;
+    animation-duration: 100s;
+}
+
+.jiroo {
+    color: white;
+    animation-name: color;
+    animation-duration: 10s;
+}
+
+.jiro {
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    color: black;
+    animation-name: color;
+    animation-duration: 40s;
+}
+
+@keyframes color {
+    0% {
+        color: red;
+    }
+    10% {
+        color: aqua;
+    }
+    20% {
+        color: brown;
+    }
+    30% {
+        color: chartreuse;
+    }
+    40% {
+        color: cornsilk;
+    }
+    50% {
+        color: darkmagenta;
+    }
+    60% {
+        color: gold;
+    }
+    70% {
+        color: tomato;
+    }
+    85% {
+        color: yellow;
+    }
+    90% {
+        color: blue;
+    }
+    100% {
+        color: green;
+    }
+}
+
+.liste ul a {
+    text-decoration: none;
+}
+
+.liste ul a li {
+    width: 4cm;
+    text-align: left;
+    color: tomato;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.liste ul a :hover {
+    transition: 1s linear;
+    transform: translateX(30px);
+    background-color: transparent;
+}
+
+.generale table {
+    border-radius: 15px;
+}
+
+.generale table th {
+    background-color: cyan;
+    text-align: center;
+    justify-content: center;
+    font-size: 20px;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    margin-top: 22px;
+}
+
+.center a {
+    margin: 5px;
+}
+
+.th th {
+    color: burlywood;
+    text-align: center;
+    font-size: 25px;
+}
+
+.th td {
+    text-align: center;
+    color: cornsilk;
+    font-size: 22px;
+}
+
+.angeza span {
+    font-size: 30px;
+}
